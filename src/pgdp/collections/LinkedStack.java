@@ -10,7 +10,8 @@ public class LinkedStack<T> implements Stack<T> {
 
     @Override
     public int size() {
-        return top.length();
+        if (top != null) return top.length();
+        else return 0;
     }
 
     @Override
