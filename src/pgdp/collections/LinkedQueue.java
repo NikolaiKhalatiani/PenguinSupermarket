@@ -5,12 +5,12 @@ public class LinkedQueue<T> implements Queue<T>{
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return this.size() == 0;
     }
 
     @Override
     public int size() {
-        return 0;
+        return head.length();
     }
 
     @Override

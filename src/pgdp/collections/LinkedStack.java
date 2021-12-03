@@ -15,17 +15,14 @@ public class LinkedStack<T> implements Stack<T> {
 
     @Override
     public T pop() {
-        if (isEmpty()) return null;
-        else {
-            T inHand = top.getInfo();
-            top.delete();
-            return inHand;
-        }
-
+        if (this.isEmpty()) return null;
+        T inHand = top.getInfo();
+        top = top.getNext();
+        return inHand;
     }
 
     @Override
     public void push(T thing) {
-        top.insert(thing);
+        top= new List<>(thing, top);
     }
 }
