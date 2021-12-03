@@ -16,9 +16,12 @@ public class LinkedStack<T> implements Stack<T> {
     @Override
     public T pop() {
         if (this.isEmpty()) return null;
-        T inHand = top.getInfo();
-        top = top.getNext();
-        return inHand;
+        else
+        {
+            T inHand = top.getInfo();
+            top = top.getNext();
+            return inHand;
+        }
     }
 
     @Override
