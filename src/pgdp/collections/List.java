@@ -4,6 +4,14 @@ public class List<T> {
     private final T info;
     private  List<T> next;
 
+    public T getInfo() {
+        return info;
+    }
+
+    public List<T> getNext() {
+        return next;
+    }
+
     public List(T x) {
         info = x;
         next = null;
