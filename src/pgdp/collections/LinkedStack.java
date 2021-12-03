@@ -5,21 +5,27 @@ public class LinkedStack<T> implements Stack<T> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return this.size() == 0;
     }
 
     @Override
     public int size() {
-        return 0;
+        return top.length();
     }
 
     @Override
     public T pop() {
-        return null;
+        if (isEmpty()) return null;
+        else {
+            T inHand = top.getInfo();
+            top.delete();
+            return inHand;
+        }
+
     }
 
     @Override
     public void push(T thing) {
-    top = new List<>(thing, top);
+        top.insert(thing);
     }
 }
