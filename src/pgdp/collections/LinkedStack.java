@@ -1,6 +1,7 @@
 package pgdp.collections;
 
-public class LinkedStack<T> implements Stack{
+public class LinkedStack<T> implements Stack<T> {
+    private List<T> top;
 
     @Override
     public boolean isEmpty() {
@@ -13,12 +14,12 @@ public class LinkedStack<T> implements Stack{
     }
 
     @Override
-    public Object pop() {
+    public T pop() {
         return null;
     }
 
     @Override
-    public void push(Object thing) {
-
+    public void push(T thing) {
+    top = new List<>(thing, top);
     }
 }

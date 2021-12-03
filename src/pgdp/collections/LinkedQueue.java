@@ -1,6 +1,7 @@
 package pgdp.collections;
 
-public class LinkedQueue<T> implements Queue{
+public class LinkedQueue<T> implements Queue<T>{
+    private List<T> head;
 
     @Override
     public boolean isEmpty() {
@@ -13,12 +14,12 @@ public class LinkedQueue<T> implements Queue{
     }
 
     @Override
-    public Object dequeue() {
+    public T dequeue() {
         return null;
     }
 
     @Override
-    public void enqueue(Object thing) {
+    public void enqueue(T thing) {
 
     }
 }
