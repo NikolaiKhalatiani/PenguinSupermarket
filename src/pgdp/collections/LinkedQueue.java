@@ -1,6 +1,7 @@
 package pgdp.collections;
 
-public class LinkedQueue implements Queue{
+public class LinkedQueue<T> implements Queue{
+
     @Override
     public boolean isEmpty() {
         return false;

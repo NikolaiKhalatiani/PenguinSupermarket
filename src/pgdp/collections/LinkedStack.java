@@ -1,6 +1,6 @@
 package pgdp.collections;
 
-public class LinkedStack implements Stack{
+public class LinkedStack<T> implements Stack{
 
     @Override
     public boolean isEmpty() {
