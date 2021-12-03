@@ -15,7 +15,7 @@ public class List<T> {
     }
 
     public void insert(T x) {
-        next = new List<T>(x, next);
+        next = new List<>(x, next);
     }
 
     public void delete() {
@@ -32,9 +32,9 @@ public class List<T> {
 
     @Override
     public String toString() {
-        String result = "[" + info;
+        StringBuilder result = new StringBuilder("[" + info);
         for (List<T> t = next; t != null; t = t.next)
-            result = result + ", " + t.info;
+            result.append(", ").append(t.info);
         return result + "]";
     }
 }
