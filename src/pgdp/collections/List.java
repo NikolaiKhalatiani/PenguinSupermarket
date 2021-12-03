@@ -1,8 +1,8 @@
 package pgdp.collections;
 
 public class List<T> {
-    public final T info;
-    public  List<T> next;
+    private final T info;
+    private  List<T> next;
 
     public List(T x) {
         info = x;
