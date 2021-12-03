@@ -8,7 +8,6 @@ public class StackConnector<T> implements DataStructureConnector<T>{
 
     @Override
     public void addElement(T thing) {
-
     }
 
     @Override
