@@ -10,7 +10,7 @@ public class DataStructureLink<T> {
     }
 
      public boolean moveNextFromAToB() {
-        if(!myStack.isEmpty() || !myQueue.isEmpty())
+        if(!myQueue.isEmpty())
         {
             T thing = myQueue.dequeue();
             myStack.push(thing);
