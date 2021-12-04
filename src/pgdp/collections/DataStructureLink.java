@@ -9,11 +9,11 @@ public class DataStructureLink<T> {
         this.myStack = myStack;
     }
 
-     public boolean moveNextFromAToB(T thing) {
+     public boolean moveNextFromAToB() {
         if(!myQueue.isEmpty())
         {
             myQueue.dequeue();
-            myStack.push(thing);
+            myStack.push(myQueue.dequeue());
             return true;
         }
        else return false;
