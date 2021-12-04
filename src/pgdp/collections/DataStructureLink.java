@@ -4,13 +4,19 @@ public class DataStructureLink<T> {
     private Queue<T> myQueue = new LinkedQueue<>();
     private Stack<T> myStack = new LinkedStack<>();
 
-    public DataStructureLink( Stack<T> myStack,Queue<T> myQueue) {
+    public DataStructureLink(Queue<T> myQueue, Stack<T> myStack) {
         this.myQueue = myQueue;
         this.myStack = myStack;
     }
 
-     public boolean moveNextFromAToB() {
-        return false;
+     public boolean moveNextFromAToB(T thing) {
+        if(!myQueue.isEmpty())
+        {
+            myQueue.dequeue();
+            myStack.push(thing);
+            return true;
+        }
+       else return false;
     }
 
     public void moveAllFromAToB() {
