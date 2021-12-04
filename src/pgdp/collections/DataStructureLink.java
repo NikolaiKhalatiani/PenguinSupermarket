@@ -2,10 +2,11 @@ package pgdp.collections;
 
 public class DataStructureLink<T> {
     private Queue<T> myQueue = new LinkedQueue<>();
-    private Stack<T>myStack= new LinkedStack<>();
-    public DataStructureLink(Queue<T> myQueue,Stack<T> myStack){
-        this.myQueue=myQueue;
-        this.myStack=myStack;
+    private Stack<T> myStack = new LinkedStack<>();
+
+    public DataStructureLink(Queue<T> myQueue, Stack<T> myStack) {
+        this.myQueue = myQueue;
+        this.myStack = myStack;
     }
 
     boolean moveNextFromAToB() {
@@ -16,11 +17,11 @@ public class DataStructureLink<T> {
 
     }
 
-    public Stack<T> getMyStack() {
-        return myStack;
+    public void setMyQueue(Queue<T> myQueue) {
+        this.myQueue = myQueue;
     }
 
-    public Queue<T> getMyQueue() {
-        return myQueue;
+    public void setMyStack(Stack<T> myStack) {
+        this.myStack = myStack;
     }
 }
