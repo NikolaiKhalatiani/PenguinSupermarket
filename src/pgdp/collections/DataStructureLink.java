@@ -1,6 +1,7 @@
 package pgdp.collections;
 
 public class DataStructureLink<T> {
+
     public DataStructureLink() {
         //constructor
     }
