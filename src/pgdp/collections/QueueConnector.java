@@ -7,7 +7,7 @@ public class QueueConnector<T> implements DataStructureConnector<T>{
     }
     @Override
     public T removeNextElement() {
-        if(myQueue.isEmpty()) return null;
+        if(!hasNextElement()) return null;
         else return myQueue.dequeue();
     }
 
