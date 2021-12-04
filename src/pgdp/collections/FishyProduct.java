@@ -21,7 +21,7 @@ public class FishyProduct {
 
     @Override
     public String toString() {
-        return "(" + '"' + name + '"' +
+        return "FishyProduct(" + '"' + name + '"' +
                 ", " + price +
                 ')';
     }
