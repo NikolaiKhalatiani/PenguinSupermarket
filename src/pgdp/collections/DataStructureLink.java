@@ -4,7 +4,7 @@ public class DataStructureLink<T> {
     private Queue<T> myQueue = new LinkedQueue<>();
     private Stack<T> myStack = new LinkedStack<>();
 
-    public DataStructureLink(Queue<T> myQueue, Stack<T> myStack) {
+    public DataStructureLink( Stack<T> myStack,Queue<T> myQueue) {
         this.myQueue = myQueue;
         this.myStack = myStack;
     }
