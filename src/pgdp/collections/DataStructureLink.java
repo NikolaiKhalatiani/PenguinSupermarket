@@ -14,13 +14,13 @@ public class DataStructureLink<T> {
 
     void moveAllFromAToB() {
 
-    }}
+    }
 
- /*   public Stack<T> getMyStack() {
+    public Stack<T> getMyStack() {
         return myStack;
     }
 
     public Queue<T> getMyQueue() {
         return myQueue;
     }
-}*/
+}
