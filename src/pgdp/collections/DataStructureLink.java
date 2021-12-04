@@ -9,19 +9,12 @@ public class DataStructureLink<T> {
         this.myStack = myStack;
     }
 
-    boolean moveNextFromAToB() {
+     public boolean moveNextFromAToB() {
         return false;
     }
 
-    void moveAllFromAToB() {
+    public void moveAllFromAToB() {
 
     }
 
-    public void setMyQueue(Queue<T> myQueue) {
-        this.myQueue = myQueue;
-    }
-
-    public void setMyStack(Stack<T> myStack) {
-        this.myStack = myStack;
-    }
 }
