@@ -30,10 +30,10 @@ public class PenguinCustomer {
                 ')';
     }
 
- /*      public void addProductToBasket(FishyProduct things) {
+       public void addProductToBasket(FishyProduct things) {
            products.push(things);
        }
-
+/*
        public void placeAllProductsOnBand(Queue<FishyProduct> tape) {
        }
 
