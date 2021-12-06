@@ -1,37 +1,37 @@
 package pgdp.collections;
 
-/*public class PenguinCustomer {
+public class PenguinCustomer {
     private final String name;
-    private int initialMoney;
-    private Stack<FishyProduct> cart;
+    private final int money;
+    private Stack<FishyProduct> products;
 
-    public PenguinCustomer(String name, final int initialMoney) {
-        if (name == null || initialMoney < 0) ExceptionUtil.illegalArgument("This is not Allowed");
+    public PenguinCustomer(String name, int money) {
+        if (name == null || money < 0) ExceptionUtil.illegalArgument("This is not Allowed");
         this.name = name;
-        this.initialMoney = initialMoney;
+        this.money = money;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getInitialMoney() {
-        return initialMoney;
+    public int getMoney() {
+        return money;
     }
 
     public Stack<FishyProduct> getProducts() {
-        return cart;
+        return products;
     }
 
     @Override
     public String toString() {
-        return "Fishy Product(" + '"' + name + '"' +
-                ", " + initialMoney +
+        return "Fishy Product(" + '"' + getName() + '"' +
+                ", " + getMoney() +
                 ')';
-    }
+    }}
 
-    public void addProductToBasket(FishyProduct things) {
-        cart.push(things);
+ /*   public void addProductToBasket(FishyProduct things) {
+        products.push(things);
     }
 
     public void placeAllProductsOnBand(Queue<FishyProduct> tape) {
