@@ -43,8 +43,8 @@ public class PenguinCustomer {
     }
 
     public void takeAllProductsFromBand(Queue<FishyProduct> tape) {
-        QueueConnector<FishyProduct> tape1 = new QueueConnector<>(tape);
-        StackConnector<FishyProduct> products1 = new StackConnector<>(products);
+        DataStructureConnector<FishyProduct> tape1 = new QueueConnector<>(tape);
+        DataStructureConnector<FishyProduct> products1 = new StackConnector<>(products);
         DataStructureLink<FishyProduct> productsToTape = new DataStructureLink<>(tape1, products1);
         productsToTape.moveAllFromAToB();
 
