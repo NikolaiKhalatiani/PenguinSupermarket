@@ -1,15 +1,14 @@
 package pgdp.collections;
 
 public class PenguinCustomer {
-    private String name;
+    private final String name;
     private int initialMoney;
-    private Stack<FishyProduct> basket;
+    private Stack<FishyProduct> cart;
 
-    public PenguinCustomer(final String name, final int initialMoney) {
-        if(name!=null&&initialMoney>=0){
-            this.name=name;
-            this.initialMoney= initialMoney;
-        }
+    public PenguinCustomer(String name, final int initialMoney) {
+        if (name == null || initialMoney < 0) ExceptionUtil.illegalArgument("This is not Allowed");
+        this.name = name;
+        this.initialMoney = initialMoney;
     }
 
     public String getName() {
@@ -21,7 +20,7 @@ public class PenguinCustomer {
     }
 
     public Stack<FishyProduct> getProducts() {
-        return basket;
+        return cart;
     }
 
     @Override
@@ -30,16 +29,21 @@ public class PenguinCustomer {
                 ", " + initialMoney +
                 ')';
     }
-    public void addProductToBasket(FishyProduct things){
-        basket.push(things);
+
+    public void addProductToBasket(FishyProduct things) {
+        cart.push(things);
     }
-    public void placeAllProductsOnBand(Queue<FishyProduct> tape){
+
+    public void placeAllProductsOnBand(Queue<FishyProduct> tape) {
+        this.tape
 
     }
-    public void takeAllProductsFromBand(Queue<FishyProduct> tape){
+
+    public void takeAllProductsFromBand(Queue<FishyProduct> tape) {
 
     }
-    public void pay(int check){
-        
+
+    public void pay(int check) {
+
     }
 }
