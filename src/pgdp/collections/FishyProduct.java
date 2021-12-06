@@ -20,8 +20,8 @@ public class FishyProduct {
 
     @Override
     public String toString() {
-        return "FishyProduct(" + '"' + name + '"' +
-                ", " + price +
+        return "FishyProduct(" + '"' + getName() + '"' +
+                ", " + getPrice() +
                 ')';
     }
 }
