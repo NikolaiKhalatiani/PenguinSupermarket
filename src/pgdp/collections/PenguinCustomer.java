@@ -6,7 +6,7 @@ public class PenguinCustomer {
     private Stack<FishyProduct> products;
 
     public PenguinCustomer(String name, int money) {
-        if (name == null || money < 0) ExceptionUtil.illegalArgument("This is not Allowed");
+        if (name == null || money <= 0) ExceptionUtil.illegalArgument("This is not Allowed");
         this.name = name;
         this.money = money;
     }
