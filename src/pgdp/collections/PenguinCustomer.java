@@ -3,7 +3,7 @@ package pgdp.collections;
 public class PenguinCustomer {
     private final String name;
     private int money;
-    private Stack<FishyProduct> products= new LinkedStack<>();
+    private final Stack<FishyProduct> products= new LinkedStack<>();
 
     public PenguinCustomer(String name, int money) {
         if (name == null || money < 0) ExceptionUtil.illegalArgument("This is not Allowed");
@@ -51,7 +51,7 @@ public class PenguinCustomer {
     }
 
     public void pay(int check) {
-        if (Math.abs(money - check) < 0 || check <= 0) ExceptionUtil.illegalArgument("This is not Allowed");
+        if (money<check || check < 0) ExceptionUtil.illegalArgument("This is not Allowed");
         money -=check;
     }
 }
