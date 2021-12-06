@@ -36,7 +36,6 @@ public class PenguinCustomer {
 
     public void placeAllProductsOnBand(Queue<FishyProduct> tape) {
         QueueConnector<FishyProduct> tape1 = new QueueConnector<>(tape);
-        if (products.isEmpty()) ExceptionUtil.illegalArgument("This is not Allowed");
         StackConnector<FishyProduct> products1 = new StackConnector<>(products);
         DataStructureLink<FishyProduct> productsToTape = new DataStructureLink<>(products1, tape1);
         productsToTape.moveAllFromAToB();
@@ -45,7 +44,6 @@ public class PenguinCustomer {
 
     public void takeAllProductsFromBand(Queue<FishyProduct> tape) {
         QueueConnector<FishyProduct> tape1 = new QueueConnector<>(tape);
-        if (products.isEmpty()) ExceptionUtil.illegalArgument("This is not Allowed");
         StackConnector<FishyProduct> products1 = new StackConnector<>(products);
         DataStructureLink<FishyProduct> productsToTape = new DataStructureLink<>(tape1, products1);
         productsToTape.moveAllFromAToB();
