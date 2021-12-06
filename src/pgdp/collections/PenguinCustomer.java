@@ -1,6 +1,6 @@
 package pgdp.collections;
 
-public class PenguinCustomer {
+/*public class PenguinCustomer {
     private final String name;
     private int initialMoney;
     private Stack<FishyProduct> cart;
@@ -44,4 +44,4 @@ public class PenguinCustomer {
     public void pay(int check) {
 
     }
-}
+}*/

@@ -1,10 +1,10 @@
 package pgdp.collections;
 
 public class FishyProduct {
-    private String name;
-    private int price;
+    private final String name;
+    private final int price;
 
-    public FishyProduct(final String name, final int price) {
+    public FishyProduct(String name, int price) {
         if (name == null || price <= 0) ExceptionUtil.illegalArgument("This is not Allowed");
         this.name = name;
         this.price = price;
