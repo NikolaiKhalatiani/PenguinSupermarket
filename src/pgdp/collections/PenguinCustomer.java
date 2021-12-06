@@ -35,8 +35,6 @@ public class PenguinCustomer {
     }
 
     public void placeAllProductsOnBand(Queue<FishyProduct> tape) {
-        this.tape
-
     }
 
     public void takeAllProductsFromBand(Queue<FishyProduct> tape) {
