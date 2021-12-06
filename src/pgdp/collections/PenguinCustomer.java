@@ -3,7 +3,7 @@ package pgdp.collections;
 public class PenguinCustomer {
     private final String name;
     private int money;
-    private final Stack<FishyProduct> products= new LinkedStack<>();
+    private Stack<FishyProduct> products= new LinkedStack<>();
 
     public PenguinCustomer(String name, int money) {
         if (name == null || money < 0) ExceptionUtil.illegalArgument("This is not Allowed");
