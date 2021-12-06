@@ -2,7 +2,7 @@ package pgdp.collections;
 
 public class FishyProduct {
     private final String name;
-    private int price;
+    private final int price;
 
     public FishyProduct(String name, int price) {
         if (name == null || price <= 0) ExceptionUtil.illegalArgument("This is not Allowed");
