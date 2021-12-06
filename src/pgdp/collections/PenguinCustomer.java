@@ -30,18 +30,29 @@ public class PenguinCustomer {
                 ')';
     }
 
-       public void addProductToBasket(FishyProduct things) {
-           products.push(things);
-       }
-/*
-       public void placeAllProductsOnBand(Queue<FishyProduct> tape) {
-       }
+    public void addProductToBasket(FishyProduct things) {
+        products.push(things);
+    }
 
-       public void takeAllProductsFromBand(Queue<FishyProduct> tape) {
+    public void placeAllProductsOnBand(Queue<FishyProduct> tape) {
+        QueueConnector<FishyProduct> tape1 = new QueueConnector<>(tape);
+        if (products.isEmpty()) ExceptionUtil.illegalArgument("This is not Allowed");
+        StackConnector<FishyProduct> products1 = new StackConnector<>(products);
+        DataStructureLink<FishyProduct> productsToTape = new DataStructureLink<>(products1, tape1);
+        productsToTape.moveAllFromAToB();
 
-       }
-*/
+    }
+
+    public void takeAllProductsFromBand(Queue<FishyProduct> tape) {
+        QueueConnector<FishyProduct> tape1 = new QueueConnector<>(tape);
+        if (products.isEmpty()) ExceptionUtil.illegalArgument("This is not Allowed");
+        StackConnector<FishyProduct> products1 = new StackConnector<>(products);
+        DataStructureLink<FishyProduct> productsToTape = new DataStructureLink<>(tape1, products1);
+        productsToTape.moveAllFromAToB();
+
+    }
+
     public void pay(int check) {
-        if (Math.abs(money - check) >= 0)money=-check;
+        if (Math.abs(money - check) >= 0) money = -check;
     }
 }
