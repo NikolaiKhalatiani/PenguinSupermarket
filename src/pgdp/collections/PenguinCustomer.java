@@ -52,6 +52,6 @@ public class PenguinCustomer {
 
     public void pay(int check) {
         if (Math.abs(money - check) < 0 || check <= 0) ExceptionUtil.illegalArgument("This is not Allowed");
-        money = -check;
+        money -=check;
     }
 }
