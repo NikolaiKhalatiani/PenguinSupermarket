@@ -29,7 +29,7 @@ public class PenguinSupermarket {
 
         }
         for (Checkout checkout : checkouts) {
-            if (checkout.queueLength() >= smallestLine) smallest = checkout;
+            if (checkout.queueLength() == smallestLine) smallest = checkout;
 
         }
         return smallest;
@@ -48,7 +48,7 @@ public class PenguinSupermarket {
             if (closedCheckout.queueLength() == 0) return;
             DataStructureConnector<PenguinCustomer> closedCheckout1 = new QueueConnector<>(closedCheckout.getQueue());
             DataStructureConnector<PenguinCustomer> needThisStackToArrangeThemBackwards = new StackConnector<>(new LinkedStack<>());
-            DataStructureLink<PenguinCustomer> goGoGo = new DataStructureLink<>(needThisStackToArrangeThemBackwards,closedCheckout1);
+            DataStructureLink<PenguinCustomer> goGoGo = new DataStructureLink<>(closedCheckout1, needThisStackToArrangeThemBackwards);
             goGoGo.moveAllFromAToB();
             while (needThisStackToArrangeThemBackwards.hasNextElement()) needThisStackToArrangeThemBackwards.removeNextElement().goToCheckout(this);
         }
