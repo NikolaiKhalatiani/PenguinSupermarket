@@ -20,7 +20,7 @@ public class FishyProduct {
 
     @Override
     public String toString() {
-        return "FishyProduct(" + '"' + getName() + '"' +
+        return "FishyProduct (" + '"' + getName() + '"' +
                 ", " + getPrice() +
                 ')';
     }

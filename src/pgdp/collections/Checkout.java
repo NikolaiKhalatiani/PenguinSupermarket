@@ -35,7 +35,8 @@ public class Checkout {
             int sum = 0;
             for (int check = 0; check <= bandBeforeCashier.size() ; check++) {
                 FishyProduct item = bandBeforeCashier.dequeue();
-                sum+=item.getPrice();
+                int price = item.getPrice();
+                sum+=price;
                 bandAfterCashier.enqueue(item);
             }
             pengi.pay(sum);

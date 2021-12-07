@@ -10,8 +10,7 @@ public class DataStructureLink<T> {
     }
 
     public boolean moveNextFromAToB() {
-        if(first.hasNextElement())
-        {
+        if (first.hasNextElement()) {
             second.addElement(first.removeNextElement());
             return true;
         }
@@ -19,6 +18,6 @@ public class DataStructureLink<T> {
     }
 
     public void moveAllFromAToB() {
-        while(first.hasNextElement()) second.addElement(first.removeNextElement());
+        while (first.hasNextElement()) second.addElement(first.removeNextElement());
     }
-    }
+}

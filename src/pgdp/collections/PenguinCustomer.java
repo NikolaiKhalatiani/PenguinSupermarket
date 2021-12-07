@@ -25,7 +25,7 @@ public class PenguinCustomer {
 
     @Override
     public String toString() {
-        return "Fishy Product(" + '"' + getName() + '"' +
+        return "PenguinCustomer (" + '"' + getName() + '"' +
                 ", " + getMoney() +
                 ')';
     }
@@ -53,5 +53,8 @@ public class PenguinCustomer {
     public void pay(int check) {
         if (money < check || check < 0) ExceptionUtil.illegalArgument("This is not Allowed");
         money -= check;
+    }
+    public void goToCheckout(PenguinSupermarket cashier){
+
     }
 }
