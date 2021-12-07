@@ -35,10 +35,10 @@ public class PenguinSupermarket {
         if (index >= checkouts.length || checkouts.length == 0 || checkouts.length == 1 || index < 0)
             ExceptionUtil.illegalArgument("This is not Allowed");
         else {
-            Checkout closedCheckout = checkouts[index];
             Checkout[] arrayOfCheckouts = new Checkout[checkouts.length - 1];
+            Checkout closedCheckout = checkouts[index];
             for (int jndex = 0; jndex < checkouts.length; jndex++) {
-                if(jndex < index) arrayOfCheckouts[jndex] = checkouts[jndex];
+                if (jndex < index) arrayOfCheckouts[jndex] = checkouts[jndex];
                 if (jndex > index) arrayOfCheckouts[jndex - 1] = checkouts[jndex];
             }
             checkouts = arrayOfCheckouts;
@@ -47,7 +47,8 @@ public class PenguinSupermarket {
             DataStructureConnector<PenguinCustomer> needThisStackToArrangeThemBackwards = new StackConnector<>(new LinkedStack<>());
             DataStructureLink<PenguinCustomer> goGoGo = new DataStructureLink<>(closedCheckout1, needThisStackToArrangeThemBackwards);
             goGoGo.moveAllFromAToB();
-            while (needThisStackToArrangeThemBackwards.hasNextElement()) needThisStackToArrangeThemBackwards.removeNextElement().goToCheckout(this);
+            while (needThisStackToArrangeThemBackwards.hasNextElement())
+                needThisStackToArrangeThemBackwards.removeNextElement().goToCheckout(this);
         }
     }
 
