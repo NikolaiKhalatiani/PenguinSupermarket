@@ -13,7 +13,7 @@ public class PenguinSupermarket {
         this.checkouts = new Checkout[n];
     }
 
-    public PenguinSupermarket getCheckoutWithSmallestQueue() {
+    public Checkout getCheckoutWithSmallestQueue() {
         int firstLine, secondLine, smallestLine = 0;
         for (int index = 0; index < checkouts.length - 1; index++) {
             for (int jindex = 1; jindex < checkouts.length; jindex++) {
@@ -22,7 +22,7 @@ public class PenguinSupermarket {
                 smallestLine = Math.min(firstLine, secondLine);
             }
         }
-        return new PenguinSupermarket(smallestLine);
+        return new Checkout(smallestLine);
     }
 
 }
