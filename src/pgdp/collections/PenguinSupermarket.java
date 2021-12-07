@@ -23,7 +23,7 @@ public class PenguinSupermarket {
         for (int index = 0; index < checkouts.length - 1; index++) {
             for (int jndex = 0; jndex < checkouts.length; jndex++) {
                 firstLine = checkouts[index].queueLength();
-                secondLine = checkouts[jndex+1].queueLength();
+                secondLine = checkouts[jndex].queueLength();
                 smallestLine = Math.min(firstLine, secondLine);
             }
 
