@@ -15,14 +15,20 @@ public class PenguinSupermarket {
 
     public Checkout getCheckoutWithSmallestQueue() {
         int firstLine, secondLine, smallestLine = 0;
+        Checkout smallest = new Checkout();
         for (int index = 0; index < checkouts.length - 1; index++) {
-            for (int jindex = 1; jindex < checkouts.length; jindex++) {
+            for (int jndex = 1; jndex < checkouts.length; jndex++) {
                 firstLine = checkouts[index].queueLength();
-                secondLine = checkouts[jindex].queueLength();
+                secondLine = checkouts[jndex].queueLength();
                 smallestLine = Math.min(firstLine, secondLine);
             }
+            
         }
-        return new Checkout(smallestLine);
+        for (Checkout checkout : checkouts) {
+            if (checkout.queueLength() == smallestLine) smallest = checkout;
+
+        }
+        return smallest;
     }
 
 }
