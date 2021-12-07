@@ -34,7 +34,8 @@ public class PenguinSupermarket {
             }
         }
         int shortest = checkouts[0].queueLength();
-        for (Checkout checkout : checkouts) {
+        for (int i = 0; i != shortest; i++) {
+            Checkout checkout = checkouts[i];
             if (checkout.queueLength() == shortest) smallest = checkout;
         }
         return smallest;
