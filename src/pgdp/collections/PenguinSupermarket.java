@@ -25,6 +25,7 @@ public class PenguinSupermarket {
                 if (checkouts[i].queueLength() > checkouts[j].queueLength()) {
                     if (checkouts[i].queueLength() == checkouts[j].queueLength()) {
                         realSmallest = checkouts[i].queueLength();
+                        break;
                     }
                     //temp = checkouts[i].queueLength();
                     int indexLen = checkouts[i].queueLength();
