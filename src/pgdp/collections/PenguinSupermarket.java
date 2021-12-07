@@ -1,7 +1,5 @@
 package pgdp.collections;
 
-import org.apache.commons.lang3.ObjectUtils;
-
 public class PenguinSupermarket {
 
     private Checkout[] checkouts;
@@ -46,6 +44,7 @@ public class PenguinSupermarket {
             assert checkouts[jindex] != null;
             if (checkouts[jindex].queueLength() == realSmallest) break;
             jindex++;
+
         }
         return checkouts[jindex];
     }
