@@ -1,5 +1,6 @@
 package pgdp.collections;
 
+
 public class PenguinSupermarket {
 
     private Checkout[] checkouts;
@@ -34,18 +35,14 @@ public class PenguinSupermarket {
                     //indexLen=jindexLen;
                     //jindexLen=temp;
                     realSmallest = Math.min(indexLen, jindexLen);
-
                 }
+                
             }
         }
         //realSmallest = checkouts[0].queueLength();
         int jindex = 0;
-        while(true) {
-            assert checkouts[jindex] != null;
-            if (checkouts[jindex].queueLength() == realSmallest) break;
+        while(checkouts[jindex].queueLength() != realSmallest)
             jindex++;
-
-        }
         return checkouts[jindex];
     }
 
