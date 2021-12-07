@@ -26,11 +26,16 @@ public class PenguinSupermarket {
             for (int j = i + 1; j < checkouts.length; j++) {
                 if (checkouts[i].queueLength() > checkouts[j].queueLength()) {
                     temp = checkouts[i].queueLength();
+                    int yle = checkouts[i].queueLength();
+                    int yle2 = checkouts[j].queueLength();
+                    yle=checkouts[j].queueLength();
+                    yle2=temp;
                 }
             }
         }
+        int shortest = checkouts[0].queueLength();
         for (Checkout checkout : checkouts) {
-            if (checkout.queueLength() == temp) smallest = checkout;
+            if (checkout.queueLength() == shortest) smallest = checkout;
         }
         return smallest;
     }
