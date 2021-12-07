@@ -21,32 +21,31 @@ public class PenguinSupermarket {
     }
 
     public Checkout getCheckoutWithSmallestQueue() {
-        if(checkouts!=null) {
-            int realSmallest = checkouts[0].queueLength();
-            for (int i = 0; i < checkouts.length; i++) {
-                for (int j = i + 1; j < checkouts.length; j++) {
+        int realSmallest = checkouts[0].queueLength();
+        for (int i = 0; i < checkouts.length; i++) {
+            for (int j = i + 1; j < checkouts.length; j++) {
 
-                    //    if (checkouts[i].queueLength() > checkouts[j].queueLength()) {
-                    //if (checkouts[i].queueLength() == checkouts[j].queueLength()) {
-                    // realSmallest = checkouts[i].queueLength();
-                    //  break;
-                    //}
-                    //temp = checkouts[i].queueLength();
-                    int indexLen = checkouts[i].queueLength();
-                    int jindexLen = checkouts[j].queueLength();
-                    //indexLen=jindexLen;
-                    //jindexLen=temp;
-                    realSmallest = Math.min(indexLen, jindexLen);
-                    //   }
+                //    if (checkouts[i].queueLength() > checkouts[j].queueLength()) {
+                //if (checkouts[i].queueLength() == checkouts[j].queueLength()) {
+                // realSmallest = checkouts[i].queueLength();
+                //  break;
+                //}
+                //temp = checkouts[i].queueLength();
+                int indexLen = checkouts[i].queueLength();
+                int jindexLen = checkouts[j].queueLength();
+                //indexLen=jindexLen;
+                //jindexLen=temp;
+                realSmallest = Math.min(indexLen, jindexLen);
+                //   }
 
-                }
             }
-            //realSmallest = checkouts[0].queueLength();
-            int jindex = 0;
-            while (checkouts[jindex].queueLength() != realSmallest)
-                jindex++;
-            return checkouts[jindex];
         }
+        //realSmallest = checkouts[0].queueLength();
+        int jindex = 0;
+        while (checkouts[jindex].queueLength() != realSmallest) {
+            jindex++;
+        }
+        return checkouts[jindex];
     }
 
     public void closeCheckout(int index) {
