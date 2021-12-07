@@ -34,8 +34,8 @@ public class PenguinSupermarket {
         }
         return smallest;
     }
-    public void closeCheckout(int index) {}}
-    /*    if (index >= checkouts.length || checkouts.length == 0 || checkouts.length == 1 || index < 0)
+    public void closeCheckout(int index) {
+        if (index >= checkouts.length || checkouts.length == 0 || checkouts.length == 1 || index < 0)
             ExceptionUtil.illegalArgument("This is not Allowed");
         else {
             Checkout closedCheckout = checkouts[index];
@@ -58,4 +58,3 @@ public class PenguinSupermarket {
         for (Checkout checkout : checkouts) checkout.serveNextCustomer();
     }
 }
-*/
