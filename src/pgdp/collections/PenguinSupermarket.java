@@ -21,10 +21,10 @@ public class PenguinSupermarket {
         int firstLine, secondLine, smallestLine;
         int realSmallest = checkouts[0].queueLength();
         Checkout smallest = new Checkout();
-        for (int index = 0; index < checkouts.length - 1; index++) {
-            for (int jndex = 1; jndex < checkouts.length; jndex++) {
-                firstLine = checkouts[index].queueLength();
-                secondLine = checkouts[jndex].queueLength();
+        for (Checkout value : checkouts) {
+            for (Checkout checkout : checkouts) {
+                firstLine = value.queueLength();
+                secondLine = checkout.queueLength();
                 smallestLine = Math.min(firstLine, secondLine);
                 if (realSmallest > smallestLine) realSmallest = smallestLine;
             }
