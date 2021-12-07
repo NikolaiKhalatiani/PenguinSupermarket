@@ -6,7 +6,7 @@ public class Checkout {
     private final Queue<FishyProduct> bandAfterCashier;
 
 
-    public Checkout(int smallestLine) {
+    public Checkout() {
         this.queue = new LinkedQueue<>();
         this.bandBeforeCashier = new LinkedQueue<>();
         this.bandAfterCashier = new LinkedQueue<>();
