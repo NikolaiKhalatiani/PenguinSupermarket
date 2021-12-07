@@ -42,8 +42,8 @@ public class PenguinSupermarket {
             Checkout closedCheckout = checkouts[index];
             Checkout[] arrayOfCheckouts = new Checkout[checkouts.length - 1];
             for (int jndex = 0; jndex < checkouts.length; jndex++) {
-                if(jndex < index) arrayOfCheckouts[jndex] = checkouts[jndex];
                 if (jndex > index) arrayOfCheckouts[jndex - 1] = checkouts[jndex];
+                if(jndex < index) arrayOfCheckouts[jndex] = checkouts[jndex];
             }
             checkouts = arrayOfCheckouts;
             if (closedCheckout.queueLength() == 0) return;
