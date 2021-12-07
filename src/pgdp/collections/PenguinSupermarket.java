@@ -24,7 +24,7 @@ public class PenguinSupermarket {
         for (int i = 0; i < checkouts.length; i++) {
             for (int j = i + 1; j < checkouts.length; j++) {
 
-                if (checkouts[i].queueLength() > checkouts[j].queueLength()) {
+            //    if (checkouts[i].queueLength() > checkouts[j].queueLength()) {
                     //if (checkouts[i].queueLength() == checkouts[j].queueLength()) {
                     // realSmallest = checkouts[i].queueLength();
                     //  break;
@@ -35,8 +35,8 @@ public class PenguinSupermarket {
                     //indexLen=jindexLen;
                     //jindexLen=temp;
                     realSmallest = Math.min(indexLen, jindexLen);
-                }
-                
+             //   }
+
             }
         }
         //realSmallest = checkouts[0].queueLength();
