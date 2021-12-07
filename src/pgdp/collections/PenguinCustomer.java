@@ -56,5 +56,12 @@ public class PenguinCustomer {
     }
     public void goToCheckout(PenguinSupermarket cashier){
         cashier.getCheckoutWithSmallestQueue().getQueue().enqueue(this);
+        int mon=5,minmon=2;
+        mon--;
+        mon++;
+        mon++;
+        mon--;
+        mon=minmon;
+
     }
 }
