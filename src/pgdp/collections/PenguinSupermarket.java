@@ -10,7 +10,9 @@ public class PenguinSupermarket {
     }
 
     public PenguinSupermarket(int n) {
-        if (n <= 0){ ExceptionUtil.illegalArgument("This is not Allowed");}
+        if (n <= 0) {
+            ExceptionUtil.illegalArgument("This is not Allowed");
+        }
         this.checkouts = new Checkout[n];
         for (int i = 0; i < n; i++) {
             checkouts[i] = new Checkout();
@@ -19,12 +21,12 @@ public class PenguinSupermarket {
     }
 
     public Checkout getCheckoutWithSmallestQueue() {
-        int temp;
-        int realSmallest = checkouts[0].queueLength();
-        for (int i = 0; i < checkouts.length; i++) {
-            for (int j = i + 1; j < checkouts.length; j++) {
+        if(checkouts!=null) {
+            int realSmallest = checkouts[0].queueLength();
+            for (int i = 0; i < checkouts.length; i++) {
+                for (int j = i + 1; j < checkouts.length; j++) {
 
-            //    if (checkouts[i].queueLength() > checkouts[j].queueLength()) {
+                    //    if (checkouts[i].queueLength() > checkouts[j].queueLength()) {
                     //if (checkouts[i].queueLength() == checkouts[j].queueLength()) {
                     // realSmallest = checkouts[i].queueLength();
                     //  break;
@@ -35,15 +37,16 @@ public class PenguinSupermarket {
                     //indexLen=jindexLen;
                     //jindexLen=temp;
                     realSmallest = Math.min(indexLen, jindexLen);
-             //   }
+                    //   }
 
+                }
             }
+            //realSmallest = checkouts[0].queueLength();
+            int jindex = 0;
+            while (checkouts[jindex].queueLength() != realSmallest)
+                jindex++;
+            return checkouts[jindex];
         }
-        //realSmallest = checkouts[0].queueLength();
-        int jindex = 0;
-        while(checkouts[jindex].queueLength() != realSmallest)
-            jindex++;
-        return checkouts[jindex];
     }
 
     public void closeCheckout(int index) {
