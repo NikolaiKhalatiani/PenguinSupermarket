@@ -54,14 +54,7 @@ public class PenguinCustomer {
         if (money < check || check < 0) ExceptionUtil.illegalArgument("This is not Allowed");
         money -= check;
     }
-    public void goToCheckout(PenguinSupermarket cashier){
-        cashier.getCheckoutWithSmallestQueue().getQueue().enqueue(this);
-        int mon=5,minmon=2;
-        mon--;
-        mon++;
-        mon++;
-        mon--;
-        mon=minmon;
-//for a
+    public void goToCheckout(PenguinSupermarket pengi){
+        pengi.getCheckoutWithSmallestQueue().getQueue().enqueue(this);
     }
 }
