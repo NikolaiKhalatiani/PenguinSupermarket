@@ -20,23 +20,22 @@ public class PenguinSupermarket {
     public Checkout getCheckoutWithSmallestQueue() {
         int temp;
         int realSmallest = checkouts[0].queueLength();
-        Checkout smallest = new Checkout();
         for (int i = 0; i < checkouts.length; i++) {
             for (int j = i + 1; j < checkouts.length; j++) {
                 if (checkouts[i].queueLength() > checkouts[j].queueLength()) {
-                    temp = checkouts[i].queueLength();
-                    int yle = checkouts[i].queueLength();
-                    int yle2 = checkouts[j].queueLength();
-                    yle=yle2;
-                    yle2=temp;
+                    //temp = checkouts[i].queueLength();
+                    int indexLen = checkouts[i].queueLength();
+                    int jindexLen = checkouts[j].queueLength();
+                    //indexLen=jindexLen;
+                    //jindexLen=temp;
+                    realSmallest = Math.min(indexLen, jindexLen);
                 }
             }
         }
-        realSmallest = checkouts[0].queueLength();
+        //realSmallest = checkouts[0].queueLength();
         int jindex = 0;
         while(checkouts[jindex].queueLength() != realSmallest)
             jindex++;
-
         return checkouts[jindex];
     }
 
