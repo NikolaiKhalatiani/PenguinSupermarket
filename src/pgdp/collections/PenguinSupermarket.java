@@ -10,7 +10,7 @@ public class PenguinSupermarket {
     }
 
     public PenguinSupermarket(int n) {
-        if (n <= 0) ExceptionUtil.illegalArgument("This is not Allowed");
+        if (n <= 0){ ExceptionUtil.illegalArgument("This is not Allowed");}
         this.checkouts = new Checkout[n];
         for (int i = 0; i < n; i++) {
             checkouts[i] = new Checkout();
