@@ -55,6 +55,6 @@ public class PenguinCustomer {
         money -= check;
     }
     public void goToCheckout(PenguinSupermarket cashier){
-
+        cashier.getCheckoutWithSmallestQueue().getQueue().enqueue(this);
     }
 }
