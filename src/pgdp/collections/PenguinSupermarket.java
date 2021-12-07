@@ -26,7 +26,6 @@ public class PenguinSupermarket {
             for (int j = i + 1; j < checkouts.length; j++) {
                 if (checkouts[i].queueLength() > checkouts[j].queueLength()) {
                     temp = checkouts[i].queueLength();
-                    checkouts[i] = checkouts[j];
                 }
             }
         }
