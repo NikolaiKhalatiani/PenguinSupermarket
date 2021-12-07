@@ -21,9 +21,9 @@ public class PenguinSupermarket {
         int firstLine, secondLine, smallestLine = 0;
         Checkout smallest = new Checkout();
         for (int index = 0; index < checkouts.length - 1; index++) {
-            for (int jndex = 1; jndex < checkouts.length; jndex++) {
+            for (int jndex = 0; jndex < checkouts.length; jndex++) {
                 firstLine = checkouts[index].queueLength();
-                secondLine = checkouts[jndex].queueLength();
+                secondLine = checkouts[jndex+1].queueLength();
                 smallestLine = Math.min(firstLine, secondLine);
             }
 
