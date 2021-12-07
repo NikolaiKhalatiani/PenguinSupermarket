@@ -2,7 +2,7 @@ package pgdp.collections;
 
 public class PenguinSupermarket {
 
-    private final Checkout[] checkouts;
+    private Checkout[] checkouts;
 
     public Checkout[] getCheckouts() {
         return checkouts;
@@ -22,7 +22,7 @@ public class PenguinSupermarket {
                 secondLine = checkouts[jndex].queueLength();
                 smallestLine = Math.min(firstLine, secondLine);
             }
-            
+
         }
         for (Checkout checkout : checkouts) {
             if (checkout.queueLength() == smallestLine) smallest = checkout;
