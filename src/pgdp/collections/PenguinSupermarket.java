@@ -36,7 +36,7 @@ public class PenguinSupermarket {
                     //indexLen=jindexLen;
                     //jindexLen=temp;
                     realSmallest = Math.min(indexLen, jindexLen);
-                
+
                 }
             }
         }
@@ -44,7 +44,7 @@ public class PenguinSupermarket {
         int jindex = 0;
         while(true) {
             assert checkouts[jindex] != null;
-            if (!(checkouts[jindex].queueLength() != realSmallest)) break;
+            if (checkouts[jindex].queueLength() == realSmallest) break;
             jindex++;
         }
         return checkouts[jindex];
