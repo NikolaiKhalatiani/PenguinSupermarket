@@ -40,5 +40,6 @@ public class PenguinSupermarket {
     public void closeCheckout(int index) {
     }
     public void serveCustomers() {
+        for (Checkout checkout : checkouts) checkout.serveNextCustomer();
     }
 }
