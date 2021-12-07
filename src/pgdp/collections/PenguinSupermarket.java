@@ -18,22 +18,25 @@ public class PenguinSupermarket {
     }
 
     public Checkout getCheckoutWithSmallestQueue() {
-        int firstLine, secondLine, smallestLine = 0;
+        int firstLine, secondLine, smallestLine = 0, realSmallest = checkouts[0].queueLength();
         Checkout smallest = new Checkout();
         for (int index = 0; index < checkouts.length - 1; index++) {
             for (int jndex = 1; jndex < checkouts.length; jndex++) {
                 firstLine = checkouts[index].queueLength();
                 secondLine = checkouts[jndex].queueLength();
                 smallestLine = Math.min(firstLine, secondLine);
+                if (realSmallest > smallestLine) realSmallest = smallestLine;
             }
+
 
         }
         for (Checkout checkout : checkouts) {
-            if (checkout.queueLength() == smallestLine) smallest = checkout;
+            if (checkout.queueLength() == realSmallest) smallest = checkout;
 
         }
         return smallest;
     }
+
     public void closeCheckout(int index) {
         if (index >= checkouts.length || checkouts.length == 0 || checkouts.length == 1 || index < 0)
             ExceptionUtil.illegalArgument("This is not Allowed");
@@ -42,7 +45,7 @@ public class PenguinSupermarket {
             Checkout[] arrayOfCheckouts = new Checkout[checkouts.length - 1];
             for (int jndex = 0; jndex < checkouts.length; jndex++) {
                 if (jndex > index) arrayOfCheckouts[jndex - 1] = checkouts[jndex];
-                if(jndex < index) arrayOfCheckouts[jndex] = checkouts[jndex];
+                if (jndex < index) arrayOfCheckouts[jndex] = checkouts[jndex];
             }
             checkouts = arrayOfCheckouts;
             if (closedCheckout.queueLength() == 0) return;
@@ -50,7 +53,8 @@ public class PenguinSupermarket {
             DataStructureConnector<PenguinCustomer> needThisStackToArrangeThemBackwards = new StackConnector<>(new LinkedStack<>());
             DataStructureLink<PenguinCustomer> goGoGo = new DataStructureLink<>(closedCheckout1, needThisStackToArrangeThemBackwards);
             goGoGo.moveAllFromAToB();
-            while (needThisStackToArrangeThemBackwards.hasNextElement()) needThisStackToArrangeThemBackwards.removeNextElement().goToCheckout(this);
+            while (needThisStackToArrangeThemBackwards.hasNextElement())
+                needThisStackToArrangeThemBackwards.removeNextElement().goToCheckout(this);
         }
     }
 
