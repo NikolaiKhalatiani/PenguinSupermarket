@@ -48,8 +48,8 @@ public class PenguinSupermarket {
                 if (jndex < index) arrayOfCheckouts[jndex] = checkouts[jndex];
             }
             checkouts = arrayOfCheckouts;
-            if (closedCheckout.queueLength() == 0) return;
-            else {
+            if (closedCheckout.queueLength() != 0) {
+
                 DataStructureConnector<PenguinCustomer> closedCheckout1 = new QueueConnector<>(closedCheckout.getQueue());
                 DataStructureConnector<PenguinCustomer> needThisStackToArrangeThemBackwards = new StackConnector<>(new LinkedStack<>());
                 DataStructureLink<PenguinCustomer> goGoGo = new DataStructureLink<>(closedCheckout1, needThisStackToArrangeThemBackwards);
