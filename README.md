@@ -113,3 +113,98 @@ If the first connector is no longer an element, the method returns <code>false</
 Check the values for validity. Neither the name <code>null</code> nor the price should be less than or equal to 0 (penguins don’t give away anything,
 especially food). Override the <code>toString</code> method so that the return value contains the most important characteristics of a product.</p>
 <p>Example in the test case: <code>new FishyProduct("Micro Mac with Soft Fish", 1254)</code></p>
+
+#### The PenguinCustomer class
+<p>The <code>PenguinCustomer</code> puts <code>FishyProduct</code>s in his shopping cart, waits at the checkout and finally pays.
+For this we need the following attributes:</p>
+<ul>
+<li>name (<code>String</code>)</li>
+<li>available money (<code>int</code>, penguins still don't take it too seriously)</li>
+<li>the products in the shopping cart (<code>Stack&lt;FishyProduct&gt;</code>, penguins always stack the goods)</li>
+</ul>
+<p>Implement the class <code>PenguinCustomer</code> with the mentioned attributes and provide the getters:</p>
+<ul>
+<li><code>getName()</code></li>
+<li><code>getMoney()</code></li>
+<li><code>getProducts()</code></li>
+</ul>
+<p>A few more methods are also necessary:</p>
+<ul>
+<li>with <code>addProductToBasket(FishyProduct)</code> a penguin can add the transferred product to his product stack. (This can also be multiple).</li>
+<li>with <code>placeAllProductsOnBand(Queue&lt;FishyProduct&gt;)</code> the penguin places all its products on the belt at the checkout (the transferred queue).
+Use a DataStructureLink for this.</li>
+<li>with <code>takeAllProductsFromBand(Queue&lt;FishyProduct&gt;)</code> the penguin takes all products from the tape at the till (the transferred queue) into its product stack.
+Use a DataStructureLink for this.</li>
+<li>with <code>pay(int)</code> the penguin pays the transferred amount. The amount must not be negative and the available money must not be negative as well (penguins cannot have debts).</li>
+</ul>
+<p>Make all attributes - if possible - final so that their value is only set once when the <code>PenguinCustomer(String name, int initialMoney)</code> constructor is called.
+Check the values for validity. So neither the name <code>null</code> nor the money available should be negative (penguins cannot have debts).
+Override the <code>toString</code> method so that the return value contains the most important characteristics of a PenguinCustomer.</p>
+<p>Example in the test case: <code>new FishyProduct("Micro Mac with Soft Fish", 1254)</code> and <code>new PenguinCustomer("Tux", 1337)</code>.
+In the first test only name and money are checked, in the second the FishyProduct is placed in the shopping cart (<code>addProductToBasket</code>).</p>
+
+#### Penguinsupermarket
+##### Checkout
+<p>Create the class <code>Checkout</code>, which represents a cash register in our supermarket. It consists of:</p>
+<ul>
+<li>a queue from <code>PenguinCustomer</code>s</li>
+<li>a queue of <code>FishyProduct</code>s in front of the cashier on the belt</li>
+<li>a queue of <code>FishyProduct</code>s after the cashier on the tape</li>
+</ul>
+<p>Implement the class <code>Checkout</code> with a parameterless constructor and the named attributes and provide the getters:</p>
+<ul>
+<li><code>getQueue()</code></li>
+<li><code>getBandBeforeCashier()</code></li>
+<li><code>getBandAfterCashier()</code></li>
+</ul>
+<p><code>queueLength()</code> method directly returns the length of the queue.
+<code>serveNextCustomer()</code> method should be implemented so that the next penguin is served.
+The procedure is as follows:</p>
+<ul>
+<li>the first <code>PenguinCustomer</code> leaves the queue,</li>
+<li>puts all his products on the belt in front of the cashier (<code>bandBeforeCashier</code>),</li>
+<li>the cashier scans all the products and calculates the price, moving the products to the rear belt (<code>bandAfterCashier</code>).</li>
+<li>the <code>PenguinCustomer</code> takes all products from the back belt into the shopping cart (product stack)</li>
+<li>and the <code>PenguinCustomer</code> is asked to pay. (An error may arise here, if he cannot do that, that's how it should be)</li>
+</ul>
+<p>If there is no penguin to operate, nothing happens when it is called (it waits).
+Overwrite <code>toString</code> here as well.</p>
+<p>Example in the test case: <code>new FishyProduct("Micro Mac with Soft Fish", 1254)</code> and <code>new PenguinCustomer("Tux", 1337)</code>.
+"Tux" has the product in the shopping cart and is at the checkout. <code>ServeNextCustomer()</code> is called.
+He then has the product and is no longer at the checkout.</p>  
+
+##### PenguinSupermarket
+<p>Create the class <code>PenguinSupermarket</code> that represents our supermarket. It consists of:</p>
+<ul>
+<li>an array of <code>Checkout</code>s (theoretically you can use something else here too.)</li>
+</ul>
+<p>Implement the class <code>PenguinSupermarket</code> with the mentioned attributes and provide the getters:</p>
+<ul>
+<li><code>getCheckouts()</code>, which in any case provides an array of all open <code>Checkout</code>s (registers).</li>
+</ul>
+<p>In the constructor, the <code>PenguinSupermarket</code> receives the number of registers (must be greater than 0).
+There should be other methods for this purpose:</p>
+<ul>
+<li><code>getCheckoutWithSmallestQueue()</code> returns the first of all <code>Checkout</code>s (foremost in the array), which has the smallest queue length.
+Now write the <code>goToCheckout(PenguinSupermarket)</code> method for the <code>PenguinCustomer</code> class, which can be called
+the <code>PenguinCustomer</code> places itself in the shortest queue of the handed over supermarket.</li>
+<li><code>closeCheckout(index)</code> closes the cash register at the index passed (starting from 0). If one does not exist,
+an error message should be output; and also print an error if this is the last remaining cash register.
+When a cash register is closed, the register is removed from the array of registers (the array becomes smaller),
+and the penguins have to look for another cash register.
+However, this happens in the reverse order of the queue, the last are then the first.
+You can do this with <code>DataStructureLink</code> and <code>goToCheckout(PenguinSupermarket)</code>.</li>
+<li><code>serveCustomers()</code> calls <code>serveNextCustomer()</code> once for each register.</li>
+</ul>
+<p>Example in the test case: <code>new FishyProduct("Micro Mac with Soft Fish", 1254)</code> and <code>new PenguinCustomer("Tux", 1337)</code>.
+Supermarket <code>new PenguinSupermarket(2)</code>. "Tux" has the product in the shopping cart and goes to the checkout (<code>goToCheckout</code>).
+Cash register 1 is closed (<code>closeCheckout(1)</code>)
+<code>ServeCustomers()</code> is called.
+He then has the product and is no longer at the checkout.</p>
+<p>Remarks:</p>
+<ul>
+<li><p>All methods specified here in the task are public and not static.</p></li>
+<li><p>Unspecified or obvious from the context methods return <code>void</code>.</p></li>
+<li><p>When class java.lang.Object is mentioned in the error messages, it is almost always related to the type parameters.
+(see Type Erasure in Java, at runtime every free type parameter is of the type java.lang.Object)</p></li>
+</ul>
